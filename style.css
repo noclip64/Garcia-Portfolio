@@ -1,0 +1,267 @@
+/* General Reset */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+    background: #f9f9f9; 
+}
+
+/* Navigation */
+header { 
+    background: #2c3e50;
+     color: white; 
+     padding: 1rem 0; 
+     position: sticky; 
+     top: 0; 
+     z-index: 1000; 
+    }
+.navbar { 
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 0 20px; }
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 20px; 
+}
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: color 0.3s; 
+}
+.nav-links a:hover { 
+    color: #3498db; 
+}
+
+/* Sections */
+section { 
+    flex: 1 0 auto; 
+    padding: 3rem 2rem; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    height: auto; 
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+
+.profile-img { 
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 1rem; 
+    border: 3px solid #2c3e50; 
+}
+
+/* Skills Bars */
+.skill-container { 
+    margin-bottom: 1.5rem; 
+}
+.progress-bar { 
+    background: #ddd; 
+    border-radius: 20px; 
+    height: 20px; 
+    width: 100%; 
+    overflow: hidden; 
+}
+.fill { 
+    background: #3498db; 
+    height: 100%; 
+    width: 0; 
+    transition: width 2s ease-in-out; 
+}
+
+/*Portfolio page*/
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+/* Card Styling */
+.portfolio-card {
+    background: #2c3e50; 
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    padding: 15px; 
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image Container */
+.card-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px; 
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text and Button Styling */
+.card-content {
+    padding: 20px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.card-content h3 {
+    color: #f1c40f; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    min-height: 40px; 
+}
+
+/* The "View Activity" style button */
+.view-btn {
+    display: block;
+    background: #a93226;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.view-btn:hover {
+    background: #cb4335;
+}
+
+
+/* Contact Page Grid */
+.contact-container { 
+    display: flex;
+    flex-direction: row; 
+    gap: 40px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem; 
+}
+
+form, .map {
+    flex: 1;
+    min-width: 0;
+}
+
+.map iframe {
+    width: 100%;
+    height: 450px;      
+    border-radius: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+button { 
+    padding: 10px; 
+    background: #2c3e50; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 0; 
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 5px; 
+    }
+
+    .navbar h2 {
+        font-size: 1.2rem; 
+        margin-bottom: 5px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap;     
+        justify-content: center;
+        gap: 12px;          
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;  
+    }
+
+    section {
+        padding: 2rem 1.5rem; 
+        min-height: auto;
+    }
+
+    .skill-container {
+        margin-bottom: 1rem;
+    }
+
+    .contact-container {
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    form {
+        width: 100%; 
+        padding: 0;   
+    }
+    .map iframe {
+        height: 300px; 
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
