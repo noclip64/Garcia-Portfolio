@@ -11,6 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const form = document.querySelector('form');
 
-form.onsubmit = function() {
-    alert("Message sent! Thank you for the feedback.");
-};
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Stops the page from reloading
+
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    }).then(() => {
+        alert("Message sent! Thank you for the feedback.");
+        form.reset(); // Clears the form to blank
+    });
+});
