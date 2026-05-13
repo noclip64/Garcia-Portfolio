@@ -31,7 +31,8 @@ header {
     align-items: center; 
     max-width: 1200px; 
     margin: auto; 
-    padding: 0 20px; }
+    padding: 0 20px; 
+}
 .nav-links { 
     display: flex; 
     list-style: none; 
@@ -62,7 +63,7 @@ section {
 .profile-img { 
     width: 200px; 
     height: 200px; 
-    border-radius: 50%; 
+    border-radius: 10%; 
     object-fit: cover; 
     margin-bottom: 1rem; 
     border: 3px solid #2c3e50; 
